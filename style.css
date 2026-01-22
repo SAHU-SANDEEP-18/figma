@@ -1,0 +1,183 @@
+@font-face {
+    font-family: gil;
+    src: url("./font/Gilroy-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  font-family: gil;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background: #f3f4f6;
+  color: #111827;
+}
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+/* PANELS */
+.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+}
+body.dark .panel {
+  background: #020617;
+  border-color: #1e293b;
+}
+
+.left {
+  width: 220px;
+}
+.right {
+  width: 300px;
+}
+.title {
+  padding: 10px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body.dark .title {
+  border-color: #1e293b;
+}
+.scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+/* CANVAS */
+.center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canvas {
+  width: 900px;
+  height: 100vh;
+  background: #e8eaec;
+  position: relative;
+  overflow: hidden;
+}
+body.dark .canvas {
+  background: #334155;
+}
+
+/* ELEMENT */
+.element {
+  position: absolute;
+  cursor: move;
+}
+.selected {
+  outline: 2px solid #6366f1;
+}
+
+/* RESIZE */
+.handle {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  position: absolute;
+}
+.tl {
+  left: -4px;
+  top: -4px;
+  cursor: nw-resize;
+}
+.tr {
+  right: -4px;
+  top: -4px;
+  cursor: ne-resize;
+}
+.bl {
+  left: -4px;
+  bottom: -4px;
+  cursor: sw-resize;
+}
+.br {
+  right: -4px;
+  bottom: -4px;
+  cursor: se-resize;
+}
+
+/* LAYERS */
+.layer {
+  padding: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.layer.active {
+  background: #c7d2fe;
+}
+body.dark .layer.active {
+  background: #3730a3;
+}
+
+/* UI */
+.section {
+  margin-bottom: 14px;
+}
+.section h4 {
+  font-size: 13px;
+  margin: 6px 0;
+}
+.row {
+  display: flex;
+  gap: 6px;
+}
+input,
+select {
+  width: 100%;
+  padding: 6px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 3px;
+
+}
+
+button {
+  width: 48%;
+  padding: 6px;
+  font-size: 13px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+#modeBtn{
+    border-radius: 10px;
+}
+
+body.dark input,
+body.dark button,
+body.dark select {
+  background: #020617;
+  color: #e5e7eb;
+  border-color: #9e9fa2;
+}
+.icon-btn {
+  width: 36px;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-btn.active-align {
+  background: #6366f1;
+  color: #fff;
+}
+body.dark .icon-btn.active-align {
+  background: #4f46e5;
+}

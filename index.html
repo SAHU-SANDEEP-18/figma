@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mini Figma Clone</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/android-chrome-192x192.png" type="image/x-icon">
+
+  </head>
+
+  <body>
+    <!-- LEFT -->
+    <div class="panel left">
+      <div class="title"><i class="ri-layers-line"></i> Layers</div>
+      <div class="scroll" id="layers"></div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="center">
+      <div class="canvas" id="canvas"></div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="panel right">
+      <div class="title">
+        <span><i class="ri-tools-line"></i> properties</span>
+        <button id="modeBtn" onclick="toggleMode()">
+          <i class="ri-moon-line"></i>
+        </button>
+      </div>
+
+      <div class="scroll">
+        <div class="section">
+          <button onclick="addRect()">Rectangle</button>
+          <button onclick="addText()">Text</button>
+        </div>
+
+        <div class="section">
+          <h4>Width / Height</h4>
+          <div class="row">
+            <input type="number" id="w" />
+            <input type="number" id="h" />
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>Background Color</h4>
+          <input type="color" id="bgColor" />
+        </div>
+
+        <div class="section" id="textContentSection">
+          <h4>Text Content</h4>
+          <input type="text" id="textContent" />
+        </div>
+
+        <div class="section" id="textColorSection">
+          <h4>Text Color</h4>
+          <input type="color" id="textColor" />
+        </div>
+
+        <div class="section">
+          <h4>Font</h4>
+          <div class="row">
+            <input type="number" id="fontSize" placeholder="Size" />
+            <select id="fontWeight">
+              <option value="normal">Normal</option>
+              <option value="bold">Bold</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>Text Align</h4>
+          <div class="row">
+            <button class="icon-btn align-text" data-align="left">
+              <i class="ri-align-left"></i>
+            </button>
+            <button class="icon-btn align-text" data-align="center">
+              <i class="ri-align-center"></i>
+            </button>
+            <button class="icon-btn align-text" data-align="right">
+              <i class="ri-align-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>Layer Order</h4>
+          <div class="row">
+            <button onclick="layerUp()">Up</button>
+            <button onclick="layerDown()">Down</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h4>Export</h4>
+          <button onclick="exportJSON()">Export JSON</button>
+          <button onclick="exportHTML()">Export HTML</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
